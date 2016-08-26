@@ -29,15 +29,28 @@ end
 # Part 2
 
 def hello(name)
-  # YOUR CODE HERE
+  str = "Hello, " << name
+  return str.to_s
 end
 
 def starts_with_consonant? s
-  # YOUR CODE HERE
+  
+  c = s[0].to_s.downcase
+  
+  if /[A-Za-z]+/ =~ c && /[^aeiou]+/ =~ c
+    return true
+  end
+  
+  return false
 end
 
 def binary_multiple_of_4? s
-  # YOUR CODE HERE
+  if /^[01]*$/ =~ s && 
+    !s.empty? && 
+    s.to_i(2) % 4 == 0
+      return true
+  end
+  return false
 end
 
 # Part 3
