@@ -56,5 +56,30 @@ end
 # Part 3
 
 class BookInStock
-# YOUR CODE HERE
+  def initialize( isbn, price )
+    raise ArgumentError, 'Type ISBN number' unless !isbn.empty? 
+    raise ArgumentError, 'Price must be greater than 0' unless price > 0 
+    @isbn = isbn
+    @price = price
+  end
+ 
+  def isbn
+    @isbn
+  end
+  
+  def isbn=(s)
+    @isbn = s
+  end
+  
+  def price
+    @price
+  end
+  
+  def price=(s)
+    @price = s
+  end
+  
+  def price_as_string
+    return sprintf("$%.02f", @price )
+  end
 end
